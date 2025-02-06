@@ -4,7 +4,9 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "nuke": "nx reset && rm -rf dist/ node_modules package-lock.json && npm install"
+    "nuke": "nx reset && rm -rf dist/ node_modules package-lock.json && npm install",
+    "build:all": "nx run-many --target=build --projects=frontend,backend --parallel",
+    "serve:all": "nx run-many --target=serve --projects=frontend,backend --parallel"
   },
   "private": true,
   "devDependencies": {

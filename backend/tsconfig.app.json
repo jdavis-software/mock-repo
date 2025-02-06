@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../dist/backend", // ✅ Ensure compiled files go to dist/backend
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "rootDir": "./src", // ✅ Ensures correct directory structure
+    "types": ["node"],
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "declaration": true
+  },
+  "include": ["src/**/*.ts"]
+}

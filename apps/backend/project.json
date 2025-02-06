@@ -1,13 +1,13 @@
 {
   "name": "backend",
-  "$schema": "../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "backend/src",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/backend/src",
   "projectType": "application",
   "targets": {
     "build": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "tsc"
+        "command": "tsc --project apps/backend/tsconfig.app.json"
       }
     },
     "serve": {
@@ -16,6 +16,7 @@
       "dependsOn": ["build"],
       "options": {
         "buildTarget": "backend:build",
+        "main": "dist/backend/main.js", // ✅ Ensure this matches the build output
         "runBuildTargetDependencies": false
       }
     }
